@@ -29,4 +29,74 @@ def info_name(name):
 10.1) Flask automatically looks for HTML templates in templates directory. So name the folder as templates ONLY
 10.2) Large applications can be separated to have multiple template directories
 10.3) There is a render_template function in flask.
+10.4) Create a templates folder at the same level as the appflask.py file.
+10.5) Create a base.html file and place it in a folder called templates. 
+10.6 ) from flask import Flask , render_template   <---- Add this
+10.7) Full code at this level
+----------------- 10.7 Code--------------------
+from flask import Flask , render_template
+app = Flask(__name__)
+@app.route('/')
+def index():
+    return render_template('base.html')
+
+if __name__ == '__main__':
+    app.run(debug= True)
+    #app.run()  # for no debug
+
+----------------- 10.7 Code--------------------
+10.8) Create a static folder at the same level as templates and place an image
+10.9) <img src ="../static/flowers.jpg">   <--- add this is the base.html file's body. 
+ 
+11) Template Variables .. (Jinja templating)
+11.1) Jinja templating lets us directly insert variables from Python code to html.
+11.2)  {{ some_variable }}
+11.3) We can pass strings, list, dictionaries and more into templates.
+------ 11 code -----
+@app.route('/')
+def index():
+    varstr = "Anupam"
+    varlst = [10,12,13,1,4,1,2,44]
+    vardict = {'K1':'val1', 'K2':'val2'}
+    return render_template('base.html', vst=varstr, vlst= varlst, vdict= vardict )
+--- below is in .html  ----
+{{ vst }}
+{{ vlst }}
+{{ vdict }}
+{{ vdict['K1'] }}
+--- below is in .html  ----
+------ 11 code -----
+
+12 -- Template Control Flow
+-----12 code ----
+{%  for i in vdict.keys()  %}
+<li>{{ i }}</li>
+<li>{{ vdict[i] }}</li>
+{% endfor %}
+-----12 code ----
+
+13) Control and Filter
+--- 13 Code ---
+<body>
+	<h1>Basic Variable {{ vst }}</h1>
+	<h2> Dictonary {{ vdict }} </h2>
+	{%  for i in  vdict.keys() %}
+	<h1>Capitalize {{ vdict[i]|upper  }}</h1>
+	{% endfor %}
+	{% if 'val12' in vdict.values()  %}
+	<h2>"val1 found"</h2>
+	{% else %}
+	<h2>"val1 NOT FOUD"</h2>
+	{% endif %}
+</body>
+--- 13 Code --- 
+
+14 url_for()   <-- This is a helper function
+14.1) {{ url_for('MentionFunctionNameHere') }}
+14.2) <a class="navbar-brand" href="{{ url_for('static',filename='flowers.jpg')}}">Image</a>       <--- links image in Navbar
+
+15 
+Forms
+15.1) 
+
 

@@ -1,10 +1,17 @@
-from flask import Flask
+from flask import Flask , render_template
 app = Flask(__name__)
 
+varstr = "Anupam"
+varlst = [10, 12, 13, 1, 4, 1, 2, 44]
+vardict = {'K1': 'val1', 'K2': 'val2'}
 
 @app.route('/')
 def index():
-    return '<h1> The First Page </h1>'
+    return render_template('homepage.html', vst=varstr, vlst= varlst, vdict= vardict )
+
+@app.route('/business/')
+def business():
+    return render_template('business.html', vst=varstr, vlst= varlst, vdict= vardict )
 
 @app.route('/info/')
 def info():
