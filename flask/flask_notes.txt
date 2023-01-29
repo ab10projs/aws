@@ -1,1 +1,32 @@
-1) 
+1) HTML: Display page elements
+2) CSS: Styles elements
+3) Bootstrap: automatic styling with JS
+4) Jinja templates grab information from Python and Flask and send it to frontend HTML
+5) Flask is web framework
+6) Flask renders web pages, can edit them with Jinja, and can communicate with database
+
+7) Flask BASIC
+7.1) from flask import Flask   				# From flask package import Flask class
+7.2) app = Flask(__name__)     				# Creates an instance(app) of Flask class and passes predefined varable
+							# name of the module in which it is used. Flask uses the location of 
+							# module passed as starting point to load template files
+7.3) @app.route('/')					# Meas the home page and the function index has this decorator
+
+8) Basic Routes (adding multiple pages)
+8.1) @app.route(TheStringParameterDeterminesTheURLExtensionThatWillLinkToFunction otherwise know as a view)
+8.2) http://127.0.0.1:5000 is currently where the app is running
+8.3) @app.route("/some_page")  means   http://127.0.0.1:5000/some_page
+8.4) Once a page is deployed, 127.0.0.1 will be replaced by www.websitename.com
+
+9) Dynamic route
+------------CodeExample-----------------
+@app.route('/info/<name>')
+def info_name(name):
+    return  '<h1>This is info for {}</h1>'.format(name)
+------------CodeExample-----------------
+
+10) Templates
+10.1) Flask automatically looks for HTML templates in templates directory. So name the folder as templates ONLY
+10.2) Large applications can be separated to have multiple template directories
+10.3) There is a render_template function in flask.
+
