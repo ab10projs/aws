@@ -96,7 +96,8 @@ def index():
 14.2) <a class="navbar-brand" href="{{ url_for('static',filename='flowers.jpg')}}">Image</a>       <--- links image in Navbar
 
 15 
-Forms
-15.1) 
+Template Forms
+15.1) Add request also to be imported from Flask as   --> from flask import Flask , render_template, request
+15.2) 
 
 

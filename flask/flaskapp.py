@@ -1,4 +1,4 @@
-from flask import Flask , render_template
+from flask import Flask , render_template, request
 app = Flask(__name__)
 
 varstr = "Anupam"
@@ -16,6 +16,17 @@ def business():
 @app.route('/info/')
 def info():
     return '<h1> This is info page </h1>'
+
+@app.route('/signup/')
+def signup_fn():
+    return render_template('signup.html')
+
+@app.route('/thankyou/')
+def thankyou_fn():
+    first =request.args.get('first')
+    last = request.args.get('last')
+    return  render_template('thankyou.html', first=first, last=last)
+
 
 @app.route('/info/<name>')
 def info_name(name):
