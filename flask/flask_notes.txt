@@ -98,6 +98,16 @@ def index():
 15 
 Template Forms
 15.1) Add request also to be imported from Flask as   --> from flask import Flask , render_template, request
-15.2) 
+16 flask_wtf and wtforms
+16.1) configure a secret key
+16.2) create WTForm class
+  16.2.1) create fields for each part of form
+16.3) Setup a view Fn
+  16.3.1) Add method= ['GET','POST']
+  16.3.2) Create instance of form class
+  16.3.3) Handle form submission
+17) In the first example, the forms are created in same file as views, later there will be separate file for Forms.
+
+
 
 
