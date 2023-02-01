@@ -2,6 +2,8 @@ from flask import Flask, request, render_template
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 
+from redis import Redis
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mykey'
 
