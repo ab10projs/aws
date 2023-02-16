@@ -18,7 +18,13 @@ print(os.getcwd(), "pppppppppp")
 df = pd.read_csv('templates/OldFaithful.csv')
 pts = np.loadtxt(np.DataSource().open('https://raw.githubusercontent.com/plotly/datasets/master/mesh_dataset.txt'))
 x, y, z = pts.T
-fig = go.Figure(data=[go.Mesh3d(x=x, y=y, z=z, color='lightpink', opacity=0.50)])
+import plotly.express as px
+df = px.data.iris()
+fig = px.scatter_3d(df, x='sepal_width',
+                    y='sepal_length',
+                    z='petal_width',
+                    size='petal_length',
+                    color='species')
 
 # Create a Dash layout that contains a Graph component:
 app.layout = html.Div([
