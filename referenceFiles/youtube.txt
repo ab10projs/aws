@@ -4,3 +4,8 @@ How to Host Django Website on AWS | How to Deploy Django Website | Easiest Way!!
 
 https://www.youtube.com/watch?v=p1bBg1x9S-I
 How to Point Domain Name to Web Hosting | GoDaddy Domain Name Connect With AWS Django Hosting Part 2
+
+
+***** For Dash/Flask ***********
+https://www.youtube.com/watch?v=uhO2JvOvTWU&t=658s
+How to Deploy Flask Application's using AWS ec2 | #aws #flask #ec2 #deployment 
