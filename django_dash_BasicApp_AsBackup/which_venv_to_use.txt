@@ -1,2 +1,0 @@
-djangodash
-also check the file "changesNeededInvirtualEnvFile" for the modifications in venv packages 
